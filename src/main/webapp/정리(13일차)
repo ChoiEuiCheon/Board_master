@@ -1,0 +1,32 @@
+--------------------------
+글삭제
+--------------------------
+
+
+--------------------------
+댓글 달기
+--------------------------
+create table tbl_reply
+(
+    rno int primary key,
+    bno int not null,
+    writer varchar2(100) not null,
+    content varchar2(2000) not null,
+    regdate date,
+    constraint fk_board_reply foreign key(bno) references tbl_board(NO) on delete cascade
+);
+-- 시퀀스
+create SEQUENCE reply_seq
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999
+    NOCYCLE
+    NOCACHE
+    NOORDER;
+
+
+
+
+
+

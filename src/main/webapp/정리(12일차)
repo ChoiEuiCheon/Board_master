@@ -1,0 +1,37 @@
+--------------------------
+1 조회수 새로고침 중복 막기
+--------------------------
+1 BoardListController 쿠키 추가(init)
+
+2 BoardReadController 
+-쿠키 확인 
+-쿠키가 있다면 -> 쿠키 제거 + CountUp()
+
+
+--------------------------
+2 UPDATE
+--------------------------
+
+1 read.jsp -> BS - Modal -> 글수정에 적용
+
+2 Model body,footer 을 Form 처리
+- pwd , 변경title, 변경content , nowPage 가 input 등록
+
+3 글수정 클릭시 -> JS 이벤트처리 -> 
+- 변경된 Title , 변경된 Content 를 Form태그의 hidden 에 등록, /Board/update.do Submit()
+
+4 BoardUpdateController
+- 변경요청 파라미터 받기
+- 읽고 있는 게시물 꺼내오기
+- 전달된 패스워드 vs 게시물패스워드 비교
+- 일치한다면
+- 변경된 내용 포함 dto 저장 -> service -> dao ->DB Update
+- Session 안의 게시물DTO 내용변경후 다시 저장
+
+
+
+
+
+
+
+
